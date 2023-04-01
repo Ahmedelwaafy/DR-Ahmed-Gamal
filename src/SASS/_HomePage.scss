@@ -2,14 +2,50 @@
 
 /**Hero SVG **********************/
 
+
+
 .left {
   height: 100vh;
-  width: 50%;
+  width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: column;
 
   animation: left 3.5s ease-in-out 5s forwards;
+ 
 }
+
+@keyframes left {
+  0% {
+    width: 100%;
+    position: fixed;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 50%;
+    position: static;
+
+  }
+}
+
+ @media screen and (max-width:768px) {
+  @keyframes left {
+  0% {
+    width: 100%;
+    position: fixed;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+    position: static;
+
+  }
+}
+  }
 
 .svg-wrapper-fixed {
   width: 100%;
@@ -30,20 +66,20 @@ svg {
 }
 
 .text--line {
-  font-size: 12vw;
+  font-size: 10vw;
   font-weight: 600;
   animation: textSize 2.2s ease-in-out 5s forwards;
 }
 
 @keyframes textSize {
   to {
-    font-size: 4vw;
+    font-size: 35px;
   }
 }
 
 #outline {
   fill: none;
-  stroke: #ccff00;
+  stroke: #eaebf5;
   stroke-dasharray: 100%;
   stroke-dashoffset: 0;
   animation-name: outline;
@@ -54,7 +90,7 @@ svg {
 
 #fill {
   fill-opacity: 0;
-  fill: #ccff00;
+  fill: #eaebf5;
   animation-name: fill;
   animation-duration: 0.5s;
   animation-timing-function: ease-in;
@@ -81,31 +117,7 @@ svg {
     fill-opacity: 1;
   }
 }
-.left {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
- 
-  animation: left 3.5s ease-in-out 5s forwards;
-}
 
-@keyframes left {
-  0% {
-    width: 100%;
-    position: fixed;
-  }
-  50% {
-    width: 50%;
-
-  }
-  100% {
-    width: 50%;
-    position: static;
-     
-  }
-}
 
 
 
@@ -144,7 +156,7 @@ nav ul li a::before {
   top: 50%;
   width: 0;
   height: 3px;
-  background-color: black;
+  background-color: #181d38;
   transition: all 0.5s ease-in-out;
 }
 
@@ -160,7 +172,7 @@ nav ul li a:hover:before {
   transform: scale(1);
 }
 
-.close{
+.close {
   display: none;
 }
 .hide {
@@ -169,3 +181,4 @@ nav ul li a:hover:before {
 .show {
   display: block;
 }
+

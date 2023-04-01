@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.html"],
+  content: ["*.html"],
   theme: {
     extend: {
       fontFamily: {
-        Anton: ["Anton", "sans-serif"],
+        Cardo: ["Cardo", "serif"],
+        Oswald: ["Oswald", "sans-serif"],
       },
 
       backgroundImage: (theme) => ({
@@ -16,10 +17,10 @@ module.exports = {
 
       colors: {
         "light-purple": "#bdadfc",
+        cblue: "#181d38",
         cpurple: "#7664ff",
         "dark-purple": "#77298c",
         cpink: "#f1ccfa",
-        cblue: "#27188f",
         "light-gray": "#eaebf5",
         "dark-gray": "#a2a2c3",
         black: "#000000",
@@ -31,7 +32,7 @@ module.exports = {
     },
     screens: {
       xl: { max: "1500px" },
-      lg: { max: "1024px" },
+      lg: { max: "1124px" },
       md: { max: "768px" },
       asm: { max: "670px" },
       sm: { max: "550px" },

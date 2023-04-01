@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap');
 
 //fonts
-$heading: "Arapey", serif;
-$body: "Maitree", serif;
-$menu: "Work Sans", sans-serif;
+$Cardo: 'Cardo', serif;
+$Oswald: 'Oswald', sans-serif;
+
 
 //colors
 
+$blue: #181d38;
+$light-gray: #eaebf5;
 :root {
   $purple: #7664ff;
   $light-purple: #bdadfc;
   $dark-purple: #77298c;
   $pink: #f1ccfa;
-  $blue: #0c145e;
-  $light-gray: #eaebf5;
   $dark-gray: #b2b8e8;
 
   $rose: #f1468e;
@@ -29,8 +29,7 @@ $menu: "Work Sans", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Cairo", sans-serif;
-}
+  }
 
 html {
   font-size: 62.5%;
@@ -38,9 +37,12 @@ html {
 }
 
 body {
-  color: #7664ff;
+  color: $light-gray;
   font-size: 1.6rem;
   overflow-x: hidden;
+  font-family: 'Cardo', serif;
+  background-color: $blue;
+
 }
 
 a {
