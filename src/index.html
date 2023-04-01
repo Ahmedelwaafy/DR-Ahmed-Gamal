@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+
+
+    <script src="https://kit.fontawesome.com/0e2a679e4b.js" crossorigin="anonymous"></script>
+
+
+    <!--SASS-->
+    <link rel="stylesheet" href="/dist/styles.css">
+
+    <!--Tailwind CSS-->
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <!--Javascript-->
+    <script src="./Scripts/index.js" defer></script>
+
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" ></script>
+
+</head>
+
+<body>
+
+    <!--Header ------------------------------------------------>
+
+    <header class="">
+        <div class="menu-buttons inline-block w-40 h-36 bg-yellow-400 fixed top-0 left-0 z-50 rounded-br-full cursor-pointer ">
+            <img class=" burger w-24 absolute" src="../dist/assets/burger.svg" alt="">
+            <img class="close w-24 absolute " src="../dist/assets/close.svg" alt="">
+        </div>
+        <div class="menu fixed top-0 left-0 w-1/2 h-full bg-yellow-400 rounded-br-full  origin-top-left z-40 duration-500 transition-all ease-in-out">
+
+            <nav class="duration-500 transition-all ease-in-out">
+                <ul class="flex flex-col items-center justify-center gap-16 ">
+                    <li>
+                        
+                        <a href="#top">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Instructor">Instructor</a>
+                        
+                    </li>
+                    <li>
+
+                        <a href="#Courses">Courses</a>
+                    </li>
+                    <li>
+
+                        <a href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!--Hero ------------------------------------------------>
+        <section class="hero-wrapper h-screen w-full flex justify-between gap-10">
+            <div class="left hero-text ">
+                <div class=" svg-wrapper-fixed  ">
+
+
+                    <svg>
+                        <symbol id="text-copy">
+                            <text text-anchor="middle" x="50%" y="50%" class="text--line">DR. Ahmed Gamal</text>
+                        </symbol>
+                        <g class="g-ants">
+                            <use xlink:href="#text-copy" class="text-copy" id="outline"></use>
+                            <use xlink:href="#text-copy" class="text-copy" id="fill"></use>
+                        </g>
+                    </svg>
+
+                </div>
+                <div class="under-svg flex flex-col items-start gap-10 justify-center px-20 w-full h-full  ">
+                    <p class="">Clinical Pharmacist Master degree in Organic Chemistry 22 years experience as a
+                        chemistry teacher
+                        for Secondary
+                        Stage.
+                    </p>
+                    <div class="hero-buttons  flex justify-start items-center gap-10">
+                        <button>Contact Me</button>
+                        <button>Parent ID</button>
+                    </div>
+                    <div class="hero-socials flex justify-start items-center gap-5">
+                        <a href="https://api.whatsapp.com/send?phone=201022089849" target="_blank"><img
+                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/whatsapp.svg" alt=""></a>
+                        <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
+                                class="w-16 hover:opacity-80 duration-300" src="../dist/assets/facebook.svg" alt=""></a>
+                        <a href="https://www.instagram.com/Dr_AhmedGamal_Chemistry/" target="_blank"><img
+                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/instagram.svg"
+                                alt=""></a>
+                        <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
+                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/.svg" alt=""></a>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="right w-1/2 h-full hero-img overflow-y-hidden flex justify-around px-12 gap-12 ">
+                <div class="img-stripe stripe1 w-1/2 flex flex-col items-center gap-12 py-12">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/1.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/2.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/3.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/7.png" alt="">
+                </div>
+                
+                <div class="img-stripe stripe2 w-1/2 flex flex-col items-center gap-12 py-12">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/7.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/4.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/5.png" alt="">
+                    <img class="w-full h-[350px] object-cover object-top" src="../dist/assets/6.png" alt="">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!--Hero ------------------------------------------------>
+        <section class="h-screen"></section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>
