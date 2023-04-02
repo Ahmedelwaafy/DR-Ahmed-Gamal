@@ -5,6 +5,9 @@ const menu = document.querySelector(".menu");
 const burger = document.querySelector(".burger");
 const closed = document.querySelector(".close");
 const navItems = document.querySelectorAll(".nav-items li");
+const fixedParentId = document.querySelector(".fixed-parent-id");
+const hideParentId = document.querySelector(".hide-parent-id");
+const parentIdButton = document.querySelector(".parent-id-button");
 
 function init() {
   function toggleMenu() {
@@ -15,8 +18,16 @@ function init() {
 
   menuButtons.addEventListener("click", toggleMenu);
   navItems.forEach((item) =>
-    item.addEventListener("click", () => menu.classList.toggle("scale"))
+  item.addEventListener("click", () => menu.classList.toggle("scale"))
   );
+  
+  parentIdButton.addEventListener("click", () => fixedParentId.classList.toggle("scale"));
+
+  hideParentId.addEventListener("click", () =>
+    fixedParentId.classList.toggle("scale")
+  );
+
+
 }
 
 document.addEventListener("DOMContentLoaded", init);
@@ -29,6 +40,20 @@ gsap.from(".under-svg > *", {
   delay: 9,
   stagger: 0.3,
   x: "-70px",
+});
+
+gsap.from(".logo", {
+  duration: 1,
+  opacity: 0,
+  delay: 9,
+  y: "-70px",
+});
+
+gsap.from(".hero-slider-wrapper", {
+  duration: 1,
+  opacity: 0,
+  delay: 11,
+  y: "70px",
 });
 
 gsap.from(".menu-buttons", {
@@ -61,6 +86,19 @@ gsap.from(".stripe2 img", {
   delay: 4,
 });
 
+//Slick Slider For Hero
+
+$(".hero-slider").slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  speed: 1500,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  arrows: false,
+  });
+
+
 //Slick Slider For Lectures
 
 $(".slider-lectures").slick({
@@ -88,3 +126,18 @@ $(".slider-lectures").slick({
     },
   ],
 });
+
+
+//rolly Smooth Scroll
+const r = rolly({
+  view: document.querySelector(".app"),
+  native: true,
+  // other options
+});
+r.init();
+
+
+//Animate on scroll
+  AOS.init({
+    duration:1500
+  });

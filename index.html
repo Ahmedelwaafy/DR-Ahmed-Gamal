@@ -23,6 +23,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
+    <!--rolly Smooth Scroll-->
+    <link rel="stylesheet" href="https://unpkg.com/rolly.js@0.2.1/css/style.css" />
+
+    <!--Animate on scroll-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+
+
     <!--Javascript-->
     <script src="./src/Scripts/index.js" defer></script>
 
@@ -36,23 +44,28 @@
     <!--slick-carousel-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
+    <!--rolly Smooth Scroll-->
+    <script src="https://unpkg.com/rolly.js@0.2.1/dist/rolly.min.js"></script>
+
+    <!--Animate on scroll-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 
-<body>
+<body >
 
     <!--Header ------------------------------------------------>
 
     <header class="">
         <div
-            class="menu-buttons inline-block w-40 h-36 bg-cyan-500 fixed top-0 left-0 z-50 rounded-br-full cursor-pointer ">
+            class="menu-buttons inline-block w-40 h-36 bg-pink-500 fixed top-0 left-0 z-50 rounded-br-full cursor-pointer ">
             <img class=" burger w-24 absolute" src="../dist/assets/burger.svg" alt="">
             <img class="close w-24 absolute " src="../dist/assets/close.svg" alt="">
         </div>
         <div
-            class="menu fixed top-0 left-0 w-1/2 lg:w-11/12  h-full bg-cyan-500 rounded-br-full  origin-top-left z-40 duration-500 transition-all ease-in-out">
+            class="menu fixed top-0 left-0 w-1/2 lg:w-11/12  h-full bg-pink-500 rounded-br-full  origin-top-left z-40 duration-500 transition-all ease-in-out">
 
             <nav class="duration-500 h-full transition-all ease-in-out">
-                <ul class="flex flex-col items-center h-full justify-center gap-16 nav-items">
+                <ul class="flex flex-col items-center h-full justify-start gap-16 pt-16 nav-items">
                     <li>
 
                         <a href="#Hero">Home</a>
@@ -69,20 +82,45 @@
 
                         <a href="#Contact">Contact</a>
                     </li>
+                    <li>
+
+                        <a href="#">Sign In</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="app">
 
         <!--Hero ------------------------------------------------>
-        <section id="Hero"
-            class="hero-wrapper min-h-fit h-screen w-full flex justify-between gap-10">
-            <div class="left hero-text md:w-full ">
+        <div
+            class="fixed-parent-id fixed w-full h-screen z-50 bg-cyan-500/80  transition-all duration-300 ease-in-out origin-center">
+
+            <div class="parent-id-container flex relative w-full h-full justify-center items-center">
+                <div class="hide-parent-id absolute w-full h-full inset-0"></div>
+
+                <form action=""
+                    class="parent-id-form w-[350px] h-[200px] bg-light-gray flex justify-center items-center flex-col gap-10 text-cblue font-Oswald shadow-lg z-50">
+                    <h3 class="text-4xl">Enter parent ID</h3>
+                    <input class="p-3 w-3/4 mx-auto" required type="password" placeholder="Parent Id">
+                    <button type="submit"
+                        class=" sumbmit-parent-id-btn relative overflow-hidden hover:text-light-gray py-2 px-7 border-2 border-cblue ">Get</button>
+                </form>
+            </div>
+
+        </div>
+
+        <section id="Hero" data-scene
+            class="hero-wrapper min-h-screen h-fit w-full flex justify-between gap-10 bg-cyan-500">
+
+            <div class="left bg-cyan-500 hero-text md:w-full min-h-screen  ">
+
+                <div class="logo-wrapper flex  w-full justify-center mt-40 h-fit">
+                    <img class="logo w-72" src="./dist/assets/logo.png" alt="">
+                </div>
+
                 <div class=" svg-wrapper-fixed  ">
-
-
                     <svg>
                         <symbol id="text-copy">
                             <text text-anchor="middle" x="50%" y="50%" class="text--line">DR. Ahmed Gamal</text>
@@ -95,17 +133,25 @@
 
                 </div>
 
-                <div class="under-svg flex flex-col items-start gap-10 justify-start px-20 w-full h-full  -mt-20 md:text-center md:items-center">
-                    <p class="text-4xl font-bold font-Oswald">Clinical Pharmacist Master degree in Organic Chemistry 22 years experience as a
+                <div
+                    class="under-svg flex flex-col  gap-10 justify-start   h-full px-20 w-full -mt-24 md:-mt-10  md:text-center items-center">
+                    <p class="text-4xl font-bold font-Oswald text-center">Clinical Pharmacist Master degree in Organic
+                        Chemistry 22 years experience as a
                         chemistry teacher
                         for Secondary
                         Stage.
                     </p>
+
                     <div class="hero-buttons  flex justify-start items-center gap-10 my-16">
-                        <button class="bg-cyan-500 p-4 duration-300 hover:bg-light-gray hover:text-cyan-500 font-Oswald">Contact Me</button>
-                        <button class="bg-pink-500 p-4 duration-300 hover:bg-light-gray hover:text-pink-500 font-Oswald">Parent ID</button>
+
+                        <a href="tel:+201022089849" class="call-button relative  p-4 duration-300  font-Oswald text-3xl border-2 z-10 w-fit overflow-hidden  
+                        hover:text-cyan-500
+                        text-light-gray border-light-gray">Contact Me</a>
+
+                        <button class=" relative parent-id-button p-4 duration-300 bg-light-gray text-cyan-500 hover:text-light-gray font-Oswald text-3xl border-2 overflow-hidden  z-10 
+                        w-fit border-light-gray">Parent ID</button>
                     </div>
-                    <div class="hero-socials flex justify-start items-center gap-5">
+                    <div class="hero-socials flex justify-start items-center gap-10">
                         <a href="https://api.whatsapp.com/send?phone=201022089849" target="_blank"><img
                                 class="w-12 hover:opacity-80 duration-300" src="../dist/assets/whatsapp.svg" alt=""></a>
                         <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
@@ -114,16 +160,44 @@
                         <a href="https://www.instagram.com/Dr_AhmedGamal_Chemistry/" target="_blank"><img
                                 class="w-12 hover:opacity-80 duration-300" src="../dist/assets/instagram.svg"
                                 alt=""></a>
-                        <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
-                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/.svg" alt=""></a>
+                        <a href="https://www.youtube.com/@Dr.ahmedgamal.chemistry/videos" target="_blank"><img
+                                class="w-16 hover:opacity-80 duration-300" src="../dist/assets/youtube.svg" alt=""></a>
 
 
                     </div>
                 </div>
 
+                <div class="hero-slider-wrapper hidden asm:block w-5/6 mx-auto max-h-[350px] my-20">
+
+                    <div class="hero-slider w-full h-full">
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/1.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/2.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/3.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/4.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/5.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/6.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                        <div class="w-full max-h-[350px] mx-10 flex justify-center items-center">
+                            <img src="./dist/assets/7.png" alt="" class="w-full max-h-full  object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="right  w-1/2 max-h-screen hero-img overflow-y-hidden flex justify-around px-12 gap-12 md:hidden ">
+            <div
+                class="right  w-1/2 max-h-screen hero-img overflow-y-hidden flex justify-around px-12 gap-12 md:hidden ">
 
                 <div class="img-stripe stripe1 w-1/2 flex flex-col items-center gap-12 py-12 lg:w-3/4 ">
                     <img class="w-full min-h-[350px] max-h-[350px] object-cover object-top" src="../dist/assets/1.png"
@@ -147,72 +221,91 @@
                         alt="">
                 </div>
             </div>
+
             </div>
+
         </section>
 
         <!--Instructor /Features ------------------------------------------------>
-        <section id="Instructor" class="h-fit width mt-60 flex flex-col gap-60 ">
+        <section id="Instructor" data-scene class="h-fit width mt-60 flex flex-col gap-60  ">
 
             <div
-                class="feature1 w-full h-[500px] lg:h-[450px] md:h-screen   flex md:flex-col justify-between items-center gap-28 md:gap-16 ">
+                class="feature1 w-full h-[500px]  lg:h-[450px] asm:h-screen   flex asm:flex-col justify-between items-center gap-28 asm:gap-16 ">
 
                 <div
-                    class="feature1__img h-full w-1/2 md:w-full border-b-4  border-b-cyan-500 flex items-end justify-center ">
+                data-aos="fade-up-right"
+
+                    class="feature1__img h-full asm:h-1/2 w-1/2 asm:w-full border-b-4  border-b-cyan-500 flex items-end justify-center ">
                     <img class=" w-full h-full object-contain object-bottom" src="./dist/assets/teacher.png" alt="">
                 </div>
 
                 <div
-                    class="feature1__text md:items-center  px-5 w-1/2 md:w-full bg-cyan-500 flex flex-col justify-center md:text-center  h-full md:h-[200px] md:min-h-[200px]">
+                data-aos="fade-up-left"
 
-                    <h2 class="text-9xl lg:text-6xl md:text-4xl md:text-center md:-ml-0  -ml-40 font-bold">Best
+                
+                    class="feature1__text asm:items-center  px-5 w-1/2 asm:w-full bg-cyan-500 flex flex-col justify-center asm:text-center  h-full asm:h-1/2 ">
+
+                    <h2 class="text-9xl lg:text-6xl asm:text-4xl asm:text-center asm:-ml-0  -ml-40 font-bold">Best
                         Chemistry Teacher</h2>
 
-                    <p class="font-Oswald  text-6xl  lg:text-5xl  md:text-3xl  my-16 md:my-10">Lorem ipsum dolor sit
+                    <p class="font-Oswald  text-6xl  lg:text-5xl  asm:text-3xl  my-16 asm:my-10">Lorem ipsum dolor sit
                         amet consectetur adipisicing elit.
                         Incidunt minus quae maxime.</p>
 
-                    <a class="font-Oswald font-bold  tracking-widest md:text-xl  hover:bg-light-gray hover:text-pink-500 duration-300 bg-pink-500 w-fit p-4"
+                    <a class="font-Oswald font-bold  feature-cta border-2 border-pink-500 relative z-10 overflow-hidden tracking-widest asm:text-xl   hover:text-pink-500 duration-300 bg-pink-500 w-fit p-4"
                         href="#Lectures">DISCOVER LECTURES</a>
 
                 </div>
             </div>
 
             <div
-                class="feature2 w-full h-[500px] lg:h-[450px] md:h-screen  flex-row-reverse flex md:flex-col  justify-between items-center gap-28 md:gap-16">
+                class="feature2 w-full h-[500px] lg:h-[450px] asm:h-screen  flex-row-reverse flex asm:flex-col  justify-between items-center gap-28 asm:gap-16">
 
                 <div
-                    class="feature1__img h-full w-1/2 md:w-full  border-b-4 border-b-cyan-500 flex justify-center items-end">
+data-aos="fade-up-left"
+                    class="feature2__img h-full asm:h-1/2 w-1/2 asm:w-full  border-b-4 border-b-cyan-500 flex justify-center items-end">
                     <img class="w-full h-full object-contain object-bottom" src="./dist/assets/png1.png" alt="">
                 </div>
 
                 <div
-                    class="feature1__text md:items-center px-5 w-1/2 md:w-full  bg-cyan-500 flex flex-col justify-center items-end text-end h-full md:h-[200px] md:min-h-[200px] md:text-center">
+                                data-aos="fade-up-right"
 
-                    <h2 class="text-9xl lg:text-6xl md:text-4xl md:text-center md:-ml-0 -ml-40 font-bold">Best Chemistry
+                    class="feature2__text asm:items-center px-5 w-1/2 asm:w-full  bg-cyan-500 flex flex-col justify-center items-end text-end h-full asm:h-1/2 asm:text-center">
+
+                    <h2 class="text-9xl lg:text-6xl asm:text-4xl asm:text-center asm:-mr-0 -mr-40 font-bold">Best
+                        Chemistry
                         Teacher</h2>
-                    <p class="font-Oswald  text-6xl lg:text-5xl  md:text-3xl  my-16 md:my-10">Lorem ipsum dolor sit amet
+                    <p class="font-Oswald  text-6xl lg:text-5xl  asm:text-3xl  my-16 asm:my-10">Lorem ipsum dolor sit
+                        amet
                         consectetur adipisicing elit.
                         Incidunt minus quae maxime.</p>
-                    <a class="font-Oswald font-bold tracking-widest md:text-xl  hover:bg-light-gray hover:text-pink-500 duration-300 bg-pink-500 w-fit p-4"
+                    <a class="font-Oswald font-bold feature-cta border-2 border-pink-500 relative z-10 overflow-hidden tracking-widest asm:text-xl   hover:text-pink-500 duration-300 bg-pink-500 w-fit p-4"
                         href="#Lectures">DISCOVER LECTURES</a>
                 </div>
             </div>
 
             <div
-                class="feature3 w-full h-[500px] lg:h-[450px] md:h-screen  flex md:flex-col justify-between items-center gap-28 md:gap-16">
+                class="feature3 w-full h-[500px] lg:h-[450px] asm:h-screen  flex asm:flex-col justify-between items-center gap-28 asm:gap-16">
                 <div
-                    class="feature1__img h-full w-1/2 md:w-full  border-b-4  border-b-cyan-500 flex items-end justify-center ">
+                data-aos="fade-up-right"
+
+                    class="feature3__img h-full asm:h-1/2 w-1/2 asm:w-full  border-b-4  border-b-cyan-500 flex items-end justify-center ">
                     <img class="w-full h-full object-contain object-bottom" src="./dist/assets/png3.png" alt="">
                 </div>
                 <div
-                    class="feature1__text md:items-center px-5 w-1/2 md:w-full  bg-cyan-500 flex flex-col justify-center  h-full md:text-center md:h-[200px] md:min-h-[200px]">
+                data-aos="fade-up-left"
 
-                    <h2 class="text-9xl lg:text-6xl md:text-4xl md:text-center md:-ml-0 -ml-40 font-bold">Best Chemistry
+
+                    class="feature3__text asm:items-center px-5 w-1/2 asm:w-full  bg-cyan-500 flex flex-col justify-center  h-full asm:text-center asm:h-1/2">
+
+                    <h2 class="text-9xl lg:text-6xl asm:text-4xl asm:text-center asm:-ml-0 -ml-40 font-bold">Best
+                        Chemistry
                         Teacher</h2>
-                    <p class="font-Oswald  text-6xl lg:text-5xl  md:text-3xl  my-16 md:my-10">Lorem ipsum dolor sit amet
+                    <p class="font-Oswald  text-6xl lg:text-5xl  asm:text-3xl  my-16 asm:my-10">Lorem ipsum dolor sit
+                        amet
                         consectetur adipisicing elit.
                         Incidunt minus quae maxime.</p>
-                    <a class="font-Oswald font-bold tracking-widest md:text-xl  hover:bg-light-gray hover:text-pink-500 duration-300 bg-pink-500 w-fit p-4"
+                    <a class="feature-cta border-2 border-pink-500 relative z-10 overflow-hidden  font-Oswald font-bold tracking-widest asm:text-xl   hover:text-pink-500  bg-pink-500 w-fit p-4"
                         href="#Lectures">DISCOVER LECTURES</a>
                 </div>
             </div>
@@ -221,10 +314,17 @@
 
         <!--Lectures ------------------------------------------------>
 
-        <section id="Lectures" class="width h-fit  my-32 py-20">
-            <h2 class="text-7xl font-bold">Best Lectures</h2>
+        <section
+                        
 
-            <div class="slider-lectures mt-28 flex justify-between gap-10 items-center">
+        id="Lectures" data-scene class="width h-fit  my-32 py-20">
+            <h2
+            data-aos="fade-up-right"
+            class="text-7xl font-bold">Best Lectures</h2>
+
+            <div
+            data-aos="zoom-in-up"
+            class="slider-lectures mt-28 flex justify-between gap-10 items-center">
 
                 <div class="slide mx-10 w-[350px] h-[340px] relative  ">
 
@@ -367,17 +467,24 @@
         </section>
 
         <!--Free-Session ------------------------------------------------>
-        <section id="Free-Session" class="width h-fit  my-32 pb-16">
-            <h2 class="text-7xl font-bold md:text-center md:text-4xl">Free Session: Revision Chapter one.</h2>
+        <section id="Free-Session" data-scene class="width h-fit  my-32 pb-16">
+            <h2 
+            data-aos="fade-up-right"
+            class="text-7xl font-bold md:text-center md:text-4xl">Free Session: Revision Chapter one.</h2>
 
-            <div class="w-3/4 mx-auto  h-fit   my-28 flex justify-center">
+            <div
+            data-aos="flip-down"
+            class="w-3/4 mx-auto  h-fit   my-28 flex justify-center">
                 <div class="w-fit h-full overflow-hidden border-2 border-cyan-500 p-4">
                     <img class="w-full h-full  object-contain cursor-pointer duration-300 hover:scale-110  "
                         src="./dist/assets/Revision.jpg" alt="">
                 </div>
             </div>
 
-            <div class="flex justify-center w-full">
+            <div
+                        data-aos="zoom-in-up"
+
+            class="flex justify-center w-full">
                 <p class="text-center text-4xl w-3/4"> حضرت معانا او محضرتش هننزلك مراجعة اول شابتر مجاناً عشان تأسيسك
                     يهمنا . 🤝 هتعرف
                     ان الكيسمستري مفيش اسهل منها
@@ -387,39 +494,43 @@
 
 
         </section>
+
+        <footer id="Contact" data-scene class="bg-cyan-500 h-fit">
+            <div
+            data-aos="zoom-out-up"
+            class="footer-container width">
+    
+                <div
+                    class="footer-container-above flex justify-between gap-10 items-center py-16 border-b-2 border-b-light-gray md:flex-col ">
+                    <h3 class="text-4xl font-bold  text-center leading-relaxed">DR.Ahmed Gamal, 22 years Experience as a
+                        Chemistry Teacher.</h3>
+    
+                    <div class="footer-socials flex justify-start items-center gap-10">
+                        <a href="https://api.whatsapp.com/send?phone=201022089849" target="_blank"><img
+                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/whatsapp.svg" alt=""></a>
+    
+                        <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
+                                class="w-[45px] hover:opacity-80 duration-300" src="../dist/assets/facebook.svg" alt=""></a>
+    
+                        <a href="https://www.instagram.com/Dr_AhmedGamal_Chemistry/" target="_blank"><img
+                                class="w-12 hover:opacity-80 duration-300" src="../dist/assets/instagram.svg" alt=""></a>
+    
+                        <a href="https://www.youtube.com/@Dr.ahmedgamal.chemistry/videos" target="_blank"><img
+                                class="w-16 hover:opacity-80 duration-300" src="../dist/assets/youtube.svg" alt=""></a>
+    
+    
+                    </div>
+    
+                </div>
+    
+                <p class="text-center py-16"> © Dr.Ahmed Gamal, All Right Reserved. By <a class="text-cblue font-bold"
+                        href="#">Omar Fathy.</a> </p>
+    
+            </div>
+        </footer>
+
     </main>
 
-    <footer id="Contact" class="bg-cyan-500 h-fit">
-        <div class="footer-container width">
-
-            <div
-                class="footer-container-above flex justify-between gap-10 items-center py-16 border-b-2 border-b-light-gray md:flex-col ">
-                <h3 class="text-4xl font-bold  text-center leading-relaxed">DR.Ahmed Gamal, 22 years Experience as a
-                    Chemistry Teacher.</h3>
-
-                <div class="footer-socials flex justify-start items-center gap-10">
-                    <a href="https://api.whatsapp.com/send?phone=201022089849" target="_blank"><img
-                            class="w-12 hover:opacity-80 duration-300" src="../dist/assets/whatsapp.svg" alt=""></a>
-
-                    <a href="https://www.facebook.com/DrAhmedGamal78" target="_blank"><img
-                            class="w-[45px] hover:opacity-80 duration-300" src="../dist/assets/facebook.svg" alt=""></a>
-
-                    <a href="https://www.instagram.com/Dr_AhmedGamal_Chemistry/" target="_blank"><img
-                            class="w-12 hover:opacity-80 duration-300" src="../dist/assets/instagram.svg" alt=""></a>
-
-                    <a href="https://www.youtube.com/@Dr.ahmedgamal.chemistry/videos" target="_blank"><img
-                            class="w-16 hover:opacity-80 duration-300" src="../dist/assets/youtube.svg" alt=""></a>
-
-
-                </div>
-
-            </div>
-
-            <p class="text-center py-16"> © Dr.Ahmed Gamal, All Right Reserved. By <a class="text-cblue font-bold"
-                    href="#">Omar Fathy.</a> </p>
-
-        </div>
-    </footer>
 
 
 </body>

@@ -2,23 +2,32 @@
 
 /**Hero SVG **********************/
 
-
-
 .left {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: fixed;
   display: flex;
   flex-direction: column;
-
   animation: left 3.5s ease-in-out 5s forwards;
- 
+  z-index: 20;
+}
+
+.svg-wrapper-fixed {
+  width: 100%;
+  height: 80%;
+  transform: translate(0%, 36%);
+  animation: svgWrapper 3.5s ease-in-out 5s forwards;
+  @media screen and (max-width: 868px) {
+    height: fit-content;
+    transform: translate(0%, 80%);
+  }
 }
 
 @keyframes left {
   0% {
     width: 100%;
     position: fixed;
+    
   }
   50% {
     width: 50%;
@@ -26,37 +35,34 @@
   100% {
     width: 50%;
     position: static;
-
   }
-}
-
- @media screen and (max-width:768px) {
-  @keyframes left {
-  0% {
-    width: 100%;
-    position: fixed;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    width: 100%;
-    position: static;
-
-  }
-}
-  }
-
-.svg-wrapper-fixed {
-  width: 100%;
-  height: 70%;
-  transform: translate(0%, 70%);
-  animation: svgWrapper 3.5s ease-in-out 5s forwards;
 }
 
 @keyframes svgWrapper {
   to {
-    transform: translate(0, 0);
+    transform: translate(0, -20%);
+  }
+}
+
+@media screen and (max-width: 868px) {
+  @keyframes left {
+    0% {
+      width: 100%;
+      position: fixed;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  @keyframes svgWrapper {
+    to {
+      transform: translate(0, 0);
+    }
   }
 }
 
@@ -118,9 +124,6 @@ svg {
   }
 }
 
-
-
-
 .stripe1 {
   animation: stripeOne 30s ease-in-out infinite;
 }
@@ -156,7 +159,7 @@ nav ul li a::before {
   top: 50%;
   width: 0;
   height: 3px;
-  background-color: #181d38;
+  background-color: #eaebf5;
   transition: all 0.5s ease-in-out;
 }
 
@@ -168,6 +171,10 @@ nav ul li a:hover:before {
 .menu {
   transform: scale(0);
 }
+.fixed-parent-id {
+  transform: scale(0);
+}
+
 .scale {
   transform: scale(1);
 }
@@ -181,4 +188,38 @@ nav ul li a:hover:before {
 .show {
   display: block;
 }
+
+.call-button::before , .parent-id-button::before, .sumbmit-parent-id-btn::before,.feature-cta::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.call-button::before{
+  background-color: #eaebf5;
+
+}
+.parent-id-button::before{
+  background-color: #06b6d4;
+
+}
+
+.sumbmit-parent-id-btn::before{
+  background-color: #181d38;
+
+}
+.feature-cta::before{
+  background-color: #eaebf5;
+
+}
+
+.call-button:hover:before, .parent-id-button:hover:before,.sumbmit-parent-id-btn:hover::before ,.feature-cta:hover::before {
+  left: 0;
+}
+
 
