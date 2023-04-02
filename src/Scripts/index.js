@@ -135,12 +135,6 @@ $(".slider-lectures").slick({
 });
 
 //rolly Smooth Scroll
-const r = rolly({
-  view: document.querySelector(".app"),
-  native: true,
-  // other options
-});
-r.init();
 
 //Animate on scroll
 AOS.init({
