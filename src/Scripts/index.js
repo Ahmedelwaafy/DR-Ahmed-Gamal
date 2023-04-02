@@ -58,6 +58,7 @@ gsap.from(".hero-slider-wrapper", {
 
 gsap.from(".menu-buttons", {
   duration: 1,
+  opacity:0,
   delay: 10,
   x: -150,
   y: -150,
