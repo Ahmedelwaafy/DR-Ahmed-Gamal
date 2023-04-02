@@ -18,16 +18,16 @@ function init() {
 
   menuButtons.addEventListener("click", toggleMenu);
   navItems.forEach((item) =>
-  item.addEventListener("click", () => menu.classList.toggle("scale"))
+    item.addEventListener("click", () => menu.classList.toggle("scale"))
   );
-  
-  parentIdButton.addEventListener("click", () => fixedParentId.classList.toggle("scale"));
+
+  parentIdButton.addEventListener("click", () =>
+    fixedParentId.classList.toggle("scale")
+  );
 
   hideParentId.addEventListener("click", () =>
     fixedParentId.classList.toggle("scale")
   );
-
-
 }
 
 document.addEventListener("DOMContentLoaded", init);
@@ -57,11 +57,18 @@ gsap.from(".hero-slider-wrapper", {
 });
 
 gsap.from(".menu-buttons", {
+  backgroundColor: "#06b6d4",
   duration: 1,
-  opacity:0,
+opacity:0,
   delay: 10,
   x: -150,
   y: -150,
+});
+
+gsap.to(".menu-buttons", {
+  backgroundColor: "#ec4899",
+  duration: 1,
+  delay: 10,
 });
 
 gsap.from(".right", {
@@ -97,8 +104,7 @@ $(".hero-slider").slick({
   autoplay: true,
   autoplaySpeed: 2000,
   arrows: false,
-  });
-
+});
 
 //Slick Slider For Lectures
 
@@ -128,7 +134,6 @@ $(".slider-lectures").slick({
   ],
 });
 
-
 //rolly Smooth Scroll
 const r = rolly({
   view: document.querySelector(".app"),
@@ -137,8 +142,7 @@ const r = rolly({
 });
 r.init();
 
-
 //Animate on scroll
-  AOS.init({
-    duration:1500
-  });
+AOS.init({
+  duration: 1500,
+});
